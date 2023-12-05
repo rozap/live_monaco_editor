@@ -1,4 +1,4 @@
-// node_modules/@monaco-editor/loader/lib/es/_virtual/_rollupPluginBabelHelpers.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/_virtual/_rollupPluginBabelHelpers.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -131,7 +131,7 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-// node_modules/state-local/lib/es/state-local.js
+// node_modules/.pnpm/state-local@1.0.7/node_modules/state-local/lib/es/state-local.js
 function _defineProperty2(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -302,15 +302,15 @@ var index = {
 };
 var state_local_default = index;
 
-// node_modules/@monaco-editor/loader/lib/es/config/index.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/config/index.js
 var config = {
   paths: {
-    vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.36.1/min/vs"
+    vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs"
   }
 };
 var config_default = config;
 
-// node_modules/@monaco-editor/loader/lib/es/utils/curry.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/utils/curry.js
 function curry2(fn) {
   return function curried() {
     var _this = this;
@@ -327,13 +327,13 @@ function curry2(fn) {
 }
 var curry_default = curry2;
 
-// node_modules/@monaco-editor/loader/lib/es/utils/isObject.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/utils/isObject.js
 function isObject2(value) {
   return {}.toString.call(value).includes("Object");
 }
 var isObject_default = isObject2;
 
-// node_modules/@monaco-editor/loader/lib/es/validators/index.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/validators/index.js
 function validateConfig(config3) {
   if (!config3)
     errorHandler2("configIsRequired");
@@ -367,7 +367,7 @@ var validators2 = {
 };
 var validators_default = validators2;
 
-// node_modules/@monaco-editor/loader/lib/es/utils/compose.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/utils/compose.js
 var compose2 = function compose3() {
   for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
     fns[_key] = arguments[_key];
@@ -380,7 +380,7 @@ var compose2 = function compose3() {
 };
 var compose_default = compose2;
 
-// node_modules/@monaco-editor/loader/lib/es/utils/deepMerge.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/utils/deepMerge.js
 function merge(target, source) {
   Object.keys(source).forEach(function(key) {
     if (source[key] instanceof Object) {
@@ -393,7 +393,7 @@ function merge(target, source) {
 }
 var deepMerge_default = merge;
 
-// node_modules/@monaco-editor/loader/lib/es/utils/makeCancelable.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/utils/makeCancelable.js
 var CANCELATION_MESSAGE = {
   type: "cancelation",
   msg: "operation is manually canceled"
@@ -412,7 +412,7 @@ function makeCancelable(promise) {
 }
 var makeCancelable_default = makeCancelable;
 
-// node_modules/@monaco-editor/loader/lib/es/loader/index.js
+// node_modules/.pnpm/@monaco-editor+loader@1.4.0/node_modules/@monaco-editor/loader/lib/es/loader/index.js
 var _state$create = state_local_default.create({
   config: config_default,
   isInitialized: false,
@@ -688,7 +688,7 @@ var CodeEditorHook = {
     this.codeEditor.onMount((monaco) => {
       if (this.el.dataset.changeEvent && this.el.dataset.changeEvent !== "") {
         this.codeEditor.standalone_code_editor.onDidChangeModelContent(() => {
-          this.pushEvent(this.el.dataset.changeEvent, {
+          this.pushEventTo(this.el, this.el.dataset.changeEvent, {
             value: this.codeEditor.standalone_code_editor.getValue()
           });
         });
